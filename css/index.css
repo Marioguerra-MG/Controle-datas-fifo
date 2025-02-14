@@ -136,6 +136,9 @@ footer {
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
+    body{
+        height: 100vh;
+    }
     #titulo {
         font-size: 30px;
     }
@@ -154,18 +157,7 @@ footer {
         font-size: 16px;
     }
 
-    footer {
-        display: flex;
-        justify-content: center; /* Alinha os itens no centro horizontalmente */
-        align-items: center; /* Alinha os itens no centro verticalmente */
-        height: 50px; /* Altura do rodapé, ajuste conforme necessário */
-        color: black; /* Cor do texto */
-    }
-    
-    footer p {
-        margin: 0; /* Remove margem ao redor do texto */
-        font-size: 14px; /* Tamanho da fonte do texto */
-    }
+   
     
 }
 
