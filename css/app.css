@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(219, 218, 218);
+}
+
+/* HEADER */
+header {
+    width: 95%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px 4px 8px rgb(161, 161, 161);
+}
+
+.conteudoInpunts {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.entradaDados {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.labelItem {
+    display: flex;
+    flex-direction: column;
+}
+
+#nomeItem, #dataItem, #quantidadeItem {
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.botoesAddPesquisar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#add, #pesquisar {
+    width: 120px;
+    height: 35px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+#add:hover {
+    background-color: #c51728;
+}
+
+#pesquisar:hover {
+    background-color: #c51728;
+}
+
+.conteudoTabela {
+    width: 95%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+thead {
+    background-color: #f1f1f1;
+}
+
+thead th {
+    padding: 10px;
+    text-align: center;
+}
+
+tbody tr {
+    border-top: 1px solid #cecece;
+}
+
+tbody td {
+    padding: 10px;
+    text-align: center;
+}
+
+td button {
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+td i {
+    font-size: 15px;
+    background-color: none;
+}
+
+#deletar {
+    transition: 0.2s ease;
+}
+
+#deletar:hover {
+    color: red;
+}
+
+#editar {
+    transition: 0.2s ease;
+}
+
+#editar:hover {
+    color: blue;
+}
+
+/* MODAL */
+.modalConteiner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    padding-top: 50px;
+}
+
+.modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    height: auto;
+    max-width: 800px;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modalResultados table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.modalResultados table, th, td {
+    border-collapse: collapse;
+    padding: 8px;
+    font-weight: 300;
+}
+
+button#fecharModal {
+    margin-top: auto;
+    padding: 5px 10px;
+    background-color: #ff5c5c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#procurar {
+    width: 250px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.inputPesquisar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#labelProcurar {
+    font-size: 25px;
+}
+
+.contentImprimirPDF {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#btnImprimirPDF {
+    background-color: #dc3545; /* Vermelho elegante */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#btnImprimirPDF:hover {
+    background-color: #c82333; /* Tom mais escuro no hover */
+    transform: scale(1.05);
+}
+
+#btnImprimirPDF:active {
+    transform: scale(0.95);
+}
+
+#iconePdf {
+    font-size: 18px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        margin-top: 5px;
+    }
+
+    .entradaDados {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .labelItem{
+        width: 100%;
+    }
+
+    #nomeItem, #dataItem, #quantidadeItem {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .botoesAddPesquisar {
+        width: 100%;
+        flex-direction: row;
+        gap: 10px;
+       
+    }
+
+    #add, #pesquisar {
+        width: 100%;
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    #procurar {
+        width: 200px;
+        font-size: 16px;
+    }
+
+    .modal {
+        width: 90%;
+    }
+
+    #btnImprimirPDF {
+        font-size: 14px;
+    }
+
+    table{
+        width: 100%;
+        display: block;   
+    }
+
+    thead{
+        display: none;
+    }
+
+    tbody{
+        display: block;
+    }
+
+    tbody tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #5e5e5e;
+        padding: 10px;
+    }
+
+    tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+        font-size: 12px;
+        border-top: none;
+        text-align: left; /* Alinha os itens à direita */
+    }
+
+    tbody td::before {
+        content: attr(data-label);
+        flex-basis: 40%;
+        text-align: left;
+        font-weight: bold;
+        padding-right: 10px;
+    }
+
+    tbody{
+        display: block;
+        max-height: 100%; /* Altura máxima do tbody */
+        overflow-y: auto;
+    }
+
+    #tabelaFilter{
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .entradaDados {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #nomeItem, #dataItem, #quantidadeItem {
+        width: 100%;
+    }
+
+    #add, #pesquisar {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    #procurar {
+        width: 180px;
+        font-size: 14px;
+    }
+
+    .modal {
+        width: 100%;
+    }
+
+    #btnImprimirPDF {
+        font-size: 12px;
+    }
+}

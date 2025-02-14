@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="/css/app.css">
+    <title>app</title>
+</head>
+<body>
+    <header>
+        <h1 id="txtLogo">PRODUTOS FIFO</h1>
+        <div class="conteudoInpunts">
+            <form class="entradaDados" >
+                <div class="labelItem">
+                    <label for="nomeItem">Nome do item:</label>
+                    <input id="nomeItem" type="text"/>
+                </div>
+
+                <div class="labelItem">
+                    <label for="dataItem">Validade:</label>
+                    <input type="date" id="dataItem"/>
+                </div>
+
+                <div class="labelItem">
+                    <label for="quantidadeItem">Quantidade Item:</label>
+                    <input type="number" id="quantidadeItem"/>
+                </div>
+
+                <div class="botoesAddPesquisar">
+                    <button type="button" id="add">Adicionar</button>
+                    <button type="button"  id="pesquisar">Pesquisar</button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <div class="conteudoTabela">
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th>Nome-Item:</th>
+                    <th>Data-Item:</th>
+                    <th>Quantidade:</th>
+                    <!-- <th class="acao">Editar:</th> -->
+                    <th class="acao">Excluir:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- As linhas da tabela serão inseridas dinamicamente -->
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- Modal para exibir os itens filtrados -->
+
+    <div class="modalConteiner" style="display: none;">
+        <div class="modal">
+            <div class="inputPesquisar">
+                <div class="contentImprimirPDF">
+                    <button id="btnImprimirPDF">Imprimir<i id="iconePdf" class="fa-solid fa-print"></i></button>
+                </div>
+                <label for="procurar" id="labelProcurar">Digite a data</label>
+                <input type="text" id="procurar" placeholder="Pesquisar"/>
+            </div>
+            <div class="modalResultado">
+                <table id="tabelaFilter">
+                    <thead>
+                        <tr>
+                            <th>Nome-Item:</th>
+                            <th>Data-Item:</th>
+                            <th>Quantidade:</th>
+                        </tr>
+                    </thead>
+                    <tbody id="modalTbody">
+                        <!-- Resultados filtrados aparecerão aqui -->
+                    </tbody>
+                </table>
+                
+            </div>
+
+            <button type="button" id="fecharModal">Fechar</button>
+            
+        </div>
+        
+    </div>
+    <script src="/js/app.js"></script>
+    <!-- <script src="/js/datasProximas.js"></script> -->
+    <script src="/js/imprimirpdf.js"></script>
+</body>
+</html>

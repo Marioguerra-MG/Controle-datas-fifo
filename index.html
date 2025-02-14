@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/sobre.css">
+    <title>controle fifo</title>
+</head>
+<body>
+
+    <header>
+        <div class="conteudoHeader">
+            <h1 id="txtTitulo">Controle Fifo</h1>
+            <nav>
+                <ul class="listaNavegacao">
+                    <li><a href="#" id="contatos">Contato</a></li>
+                    <li><a href="#" class="btn-explicacao" id="sobre">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <section class="conteudoTxtInformativo">
+            <h1 id="titulo">"Controle FIFO: Estoque sem desperdício!"</h1>
+            <p id="descricao">Com o método FIFO (First In, First Out), seus produtos mais antigos saem primeiro, reduzindo desperdícios e garantindo um estoque sempre organizado.  
+            Melhore sua gestão, evite perdas e aumente a eficiência do seu negócio.  
+            Comece agora e leve sua operação a um novo nível!</p>
+        </section>
+
+        <a href="/html/app.html" id="btnIniciar">Iniciar</a>
+    </main>
+
+
+    <footer>
+        <p id="creditos">&copy; 2025 Mario Guerra. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <div>
+        <div class="modal" id="modalExplicacao">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Como funciona o sistema?</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <p><strong>1. Armazenamento Inteligente:</strong> Os dados dos itens são salvos diretamente no navegador usando <code>localStorage</code>, garantindo que suas informações permaneçam acessíveis mesmo após fechar a página.</p>
+                <p><strong>2. Interatividade Dinâmica:</strong> O sistema permite adicionar e remover itens com facilidade, além de abrir e fechar o modal de pesquisa de forma intuitiva.</p>
+                <p><strong>3. Busca Rápida:</strong> Você pode localizar itens pelo campo de pesquisa, filtrando-os com base na data (formato DD/MM/AAAA), tornando a navegação mais eficiente.</p>
+                <p><strong>4. Relatórios em PDF:</strong> Com a biblioteca <code>jsPDF</code>, é possível gerar um relatório detalhado dos itens filtrados, facilitando o controle e a gestão do estoque.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modalContato">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Entre em Contato</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Precisa de ajuda ou tem dúvidas? Entre em contato conosco!</p>
+                <ul class="contato-info">
+                    <li><i class="fas fa-envelope"></i> Email: marioguerradasilvaneto93@gmail.com</li>
+                    <li id="whatsapp">
+                        <i class="fab fa-whatsapp"></i> 
+                        <a href="https://wa.me/5511912345678" target="_blank" class="whatsapp-link">WhatsApp: (61) 99881-4365</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="/js/index.js"></script>
+    <script src="/js/sobre.js"></script>
+</body>
+</html>
