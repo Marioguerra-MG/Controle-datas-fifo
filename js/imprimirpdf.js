@@ -18,6 +18,28 @@ function gerarPDF() {
     // Obtém a data atual
     const dataAtual = new Date().toLocaleDateString("pt-BR");
 
+    // Captura os dados filtrados do modal
+    const linhasTabela = [];
+    document.querySelectorAll("#modalTbody tr").forEach((tr) => {
+        const colunas = tr.querySelectorAll("td");
+        if (colunas.length === 3) { // Garante que há 3 colunas antes de adicionar
+            const nomeItem = colunas[0].innerText.trim();
+            const dataItem = colunas[1].innerText.trim();
+            const quantidade = colunas[2].innerText.trim();
+
+            // Evita duplicações verificando se já existe na lista
+            if (!linhasTabela.some(item => item[0] === nomeItem && item[1] === dataItem && item[2] === quantidade)) {
+                linhasTabela.push([nomeItem, dataItem, quantidade]);
+            }
+        }
+    });
+
+    // Verifica se há dados para gerar o PDF
+    if (linhasTabela.length === 0) {
+        alert("Nenhum item filtrado encontrado. O PDF não será gerado.");
+        return; // Não gera o PDF se não houver dados
+    }
+
     // Título do relatório
     doc.setFont("helvetica", "bold");
     doc.setFontSize(16);
@@ -40,22 +62,6 @@ function gerarPDF() {
     doc.text("Quantidade", 150, linhaAtual);
     linhaAtual += 10;
 
-    // Captura os dados filtrados do modal
-    const linhasTabela = [];
-    document.querySelectorAll("#modalTbody tr").forEach((tr) => {
-        const colunas = tr.querySelectorAll("td");
-        if (colunas.length === 3) { // Garante que há 3 colunas antes de adicionar
-            const nomeItem = colunas[0].innerText.trim();
-            const dataItem = colunas[1].innerText.trim();
-            const quantidade = colunas[2].innerText.trim();
-
-            // Evita duplicações verificando se já existe na lista
-            if (!linhasTabela.some(item => item[0] === nomeItem && item[1] === dataItem && item[2] === quantidade)) {
-                linhasTabela.push([nomeItem, dataItem, quantidade]);
-            }
-        }
-    });
-
     // Adiciona os dados ao PDF
     doc.setFont("helvetica", "normal");
     linhasTabela.forEach((linha) => {
@@ -64,10 +70,6 @@ function gerarPDF() {
         doc.text(linha[2], 150, linhaAtual);
         linhaAtual += 10;
     });
-
-    if (linhasTabela.length === 0) {
-        doc.text("Nenhum item encontrado.", 10, linhaAtual);
-    }
 
     // Baixa o arquivo PDF
     doc.save("relatorio_itens_filtrados.pdf");
