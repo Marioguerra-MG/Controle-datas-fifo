@@ -158,9 +158,8 @@ footer {
         display: flex;
         justify-content: center; /* Alinha os itens no centro horizontalmente */
         align-items: center; /* Alinha os itens no centro verticalmente */
-        height: 100px; /* Altura do rodapé, ajuste conforme necessário */
+        height: 50px; /* Altura do rodapé, ajuste conforme necessário */
         color: black; /* Cor do texto */
-        padding: 10px; /* Padding para dar espaçamento interno */
     }
     
     footer p {
